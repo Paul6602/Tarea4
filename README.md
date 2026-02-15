@@ -219,6 +219,22 @@ Al haber demostrado que $T(n)$ es menor o igual a $n \log_2 n$, con notacion Big
 $$T(n) = O(n \log n)$$
 
 
+# Problema 5:
+
+Para determinar el número total de veces que se ejecuta el cuerpo del bucle interno, sumamos las iteraciones del bucle $j$ para cada valor de $i$.
+Esto corresponde a la suma de los primeros $n$ enteros:
+
+$$I(n) = \sum_{i=1}^{n} i = \frac{n(n+1)}{2} = \frac{n^2 + n}{2}$$
+
+La condición (i+j) % 2 == 0 verifica si la suma de los índices es par. Esto ocurre cuando $i$ y $j$ tienen la misma paridad
+.
+
+En cualquier rango secuencial de enteros, la cantidad de números pares e impares es equilibrada (mitad y mitad). Por lo tanto, para un $n$ suficientemente grande, la condición se cumple aproximadamente en la mitad de las iteraciones totales:
+
+$$Matches(n) \approx \frac{1}{2} \cdot I(n) = \frac{n^2 + n}{4}$$
+
+
+
 
 # Problema 6: 
 
@@ -240,7 +256,7 @@ T\left(\frac{n}{3^{k-1}}\right) &= T\left(\frac{n}{3^k}\right) + c
 $$
 
 **Suma y Cancelación:**
-Sumamos todas las ecuaciones. Los términos que aparecen a ambos lados de la igualdad (en diagonal) se cancelan, dejando solo el primer término, el último término y la suma de las constantes.
+Sumamos todas las ecuaciones. Los términos que aparecen a ambos lados de la igualdad se cancelan, dejando solo el primer término, el último término y la suma de las constantes.
 
 $$T(n) = T\left(\frac{n}{3^k}\right) + k \cdot c$$
 
